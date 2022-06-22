@@ -1,0 +1,23 @@
+@use 'base/variables' as v;
+
+
+.slider{
+    overflow:hidden ;//ocultar todo lo de afuera
+
+    &__slide{
+
+        height: 100%;
+        flex-shrink: 0;
+        width: 100px;
+        position: relative;
+        transition-property: transform;
+    }
+
+    .swiper-button-next, //color de flechas de navigation
+    .swiper-button-prev{
+        color: v.$blanco;
+    }
+    .swiper-pagination-bullet-active{ //slider activo color
+        background-color:v.$verde;
+    }
+}

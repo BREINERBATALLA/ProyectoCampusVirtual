@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.navegacion{
+    display:flex;
+    flex-direction: column;
+    gap:2rem; //separacion entre elementos
+    width: 100%;
+    
+    @include m.desktop{
+        width: auto;
+        flex-direction: row;
+    }
+
+    &__link{//enlaces, texto
+        font-size: 2rem;
+        font-weight:700;
+        color:v.$negro;
+
+        &--ayuda{
+            @include m.boton(v.$verde, v.$blanco);
+            text-transform: capitalize;
+            padding:0.8rem 3rem;
+            font-size:2rem;
+            margin-top: 0rem; //centrado con los demas enlaces
+           
+        }
+
+
+
+    }
+
+   
+}

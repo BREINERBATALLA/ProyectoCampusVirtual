@@ -1,0 +1,81 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.formulario{
+
+
+    &__grilla{
+
+        @include m.tablet{
+            @include m.grid(2, 5rem); //logo y form dos columnas
+        }
+    }
+
+    &__imagen{
+        margin-top: 0rem; 
+        display: flex;
+        justify-content: center; //centrar img
+        
+
+    }
+
+    &__img{
+        width: 40rem;
+        @include m.tablet{
+            width:100%; // 100 del gridpara dispositivos más grandes, la img mas grande
+            
+        }
+    }
+
+    &__contenido{
+        background-color: v.$grisClaro;
+        padding: 0rem; //separar texto del borde
+
+    }
+
+    &__heading{
+        color:v.$negro;
+        text-align: center;
+        text-transform: uppercase;
+    span{
+        color:v.$verde;
+    }
+
+    }
+
+    &__campo{ //contenedor de campo
+        margin-bottom: 1rem; //separacion entre los inputs
+
+    }
+
+    &__label{
+        display:block;  //para que mande un input abajo y el otro arriba // se puede hacer con flex, y flex-direction:column
+        text-transform: uppercase; //mayuscula
+        color:v.$negro;
+        margin: 1rem 0;
+        font-weight: 600;
+        &--olvido{
+            display: block;
+            margin: 0.7rem 0;
+            color:v.$negro;
+            font-weight: 900;
+        }
+    }
+    &__input{
+
+        width:100%; //ocupa todo lo disponible
+        padding: 1.2rem; //para incrementar su tamaño
+        border-radius:5px;
+
+    }
+    &__submit{
+        @include m.boton(v.$verde,v.$blanco);
+        padding: 0.8rem;
+        border-radius:5px;
+        @include m.tablet{
+            width:100%; //para que ocupe todo el ancho del content
+        }
+    }
+}
+

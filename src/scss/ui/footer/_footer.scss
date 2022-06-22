@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer{
+    padding: 20px;
+    &__grilla{
+        @include m.tablet{ //tamaño
+            @include m.grid(3, 2rem);
+        }
+    }
+
+    &__caja{
+        text-align: left;
+        text-align: center; //centramos todo: titulo y contenido
+    }
+
+    &__heading{
+        color: v.$verde;
+        text-align: center;
+        
+    }
+
+    &__texto{
+        @include m.parrafo;
+        line-height: 1.8;
+    }
+
+    &__derechos{
+        text-align:center;
+        max-width: 120rem;
+        margin: 2rem auto 0 auto; //centrar
+        border-top: 1px solid darken(v.$grisClaro,10%); //linea
+        font-weight: 600;
+        
+        span{
+            color: v.$verde;
+        }
+    }
+}

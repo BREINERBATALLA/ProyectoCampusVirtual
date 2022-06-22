@@ -1,0 +1,74 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tarjetas{
+
+    &__grilla{
+            @include m.tablet{
+                @include m.grid(3, 2rem); //3 columnas separadas por 2r
+
+            }
+    }
+
+    &__texto{
+        text-align: center;
+        padding: 15px;
+        margin-top: -0px;
+
+    }
+    padding:30px;
+
+
+}
+
+.tarjeta{
+
+    max-width: 30rem; //el tamaño maximo que toman
+    margin: 0 auto 2rem auto; //centrado con separacion
+
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+    @include m.tablet{
+        max-width: unset; //toma el width del grid, para que no cambie su tamaño
+        margin:0;
+    }
+    &__imagen{
+        width:100%; //para que tomen todo el espacio disponible
+        border: .5rem solid v.$blanco;
+        transition-property: rotate scale; //animacion
+        transition-duration: 300ms;
+        &:hover{
+            transform: rotate(4deg) scale(0.7);
+        } 
+    }
+
+    &__contenido{
+        max-width: 90%;
+        margin: -5rem auto 0 auto; //centrado horizontalmente y sobre la img arriba -5
+        background-color: v.$blanco;
+        position:relative;
+    }
+    &__heading{
+        
+        @include m.headingPlano;
+        font-size: 3.4rem;
+        padding: 0.4rem 1rem;
+    }
+
+    &__enlace{
+        @include m.boton(v.$verde, v.$blanco);
+        padding:12px;
+        display: block;
+    }
+    &__texto{
+        
+        text-align:center;
+        max-width: 120rem;
+        margin: 2rem auto 0 auto; //centrar
+       
+        font-weight: 600;
+            
+    }
+
+}

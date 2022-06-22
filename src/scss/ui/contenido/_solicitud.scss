@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.solicitud{
+    margin: 3rem 0;
+    background-image: url(../img/bg.jpg);
+    background-position: center center;
+    background-size:cover ;
+    padding: 6rem 0rem;
+    color: v.$blanco;
+    text-align: center;
+    background-attachment: fixed; //efecto parallax
+
+
+    &__heading{
+        text-transform: uppercase;
+        display:block;
+        text-align:center;
+        font-family: v.$fuentePrincipal;
+        font-weight: 700;
+         
+    }
+
+    &__texto{
+        font-weight: 300;
+        max-width: 60rem;
+        margin:0 auto;
+        color: v.$blanco;
+        line-height: 2;
+
+    }
+
+    &__enlace{
+        @include m.boton(v.$verde, v.$blanco);
+        padding:12px 15px;
+
+    }
+
+
+}
