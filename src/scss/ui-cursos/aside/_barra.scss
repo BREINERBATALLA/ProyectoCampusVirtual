@@ -1,0 +1,152 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+//globales para el aside
+*{
+    margin:0rem;
+    padding:0rem;
+}
+
+body{
+    height: 100vh; //todo el height de la pantalla
+}
+.container{
+    display:flex;
+}
+.aside{
+    background: v.$grisClaro;
+    width: 300px; //ancho del aside
+    height:100%; // del body.
+
+    &__header{
+        padding: 20px 30px;
+        display:flex; //logo al lado de datos
+        align-items: center;
+        gap:1.4rem;
+        &__logo{
+            width:30px;  //los tres corresponde, a un circulo, donde ira la imagen
+            height:30px;
+            border-radius: 50%;
+           //pita el circulo azul, background:blue;
+           background:url(../img/Student.jpg);
+            background-size: cover; //imagen ocupe todo el background
+            background-position:center; //centrada
+        }
+        
+
+        &__datos{
+            
+            &__nombre{
+                color:v.$negro;
+                font-weight: 700;
+            }
+            &__correo{
+                color:v.$negro;
+
+            }
+        }
+    }
+
+    &__list{
+        display:flex; 
+        padding:20px; //alejarlo de la linea de la caja
+        gap:20px;
+        flex-direction:column;
+        margin-top: 5px;;
+        &__item{ 
+            cursor:pointer; //para que se vea que se puede dar click
+            display:flex; //row, cada icono queda al lado del texto
+            padding:10px;
+            gap:15px; //separacion entre el texto y el icono
+           
+            &__title{
+                color:v.$negro;
+
+                
+            }
+
+            &__img{
+                color: v.$baseCursos;
+            }
+        }
+    }
+
+    
+}
+
+.cursos{
+    background:v.$grisClaro;
+    max-width: 1600px;
+    padding-top: 20px;
+    width:1200px;
+
+    &__heading{
+        display:flex;
+        align-items: center;
+        padding: 2px;
+        gap: 500px;
+    }
+
+    &__tarjetas{
+        width:1200px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+       
+    }
+}
+.tarjeta{
+
+    max-width: 30rem; //el tamaño maximo que toman
+    margin: 0 auto 2rem auto; //centrado con separacion
+
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+    @include m.tablet{
+        max-width: unset; //toma el width del grid, para que no cambie su tamaño
+        margin:0;
+    }
+    &__imagen{
+        width:100%; //para que tomen todo el espacio disponible
+        border: .5rem solid v.$blanco;
+        transition-property: rotate scale; //animacion
+        transition-duration: 300ms;
+        &:hover{
+            transform: rotate(4deg) scale(0.7);
+        } 
+    }
+
+    &__contenido{
+        max-width: 90%;
+        margin: -5rem auto 0 auto; //centrado horizontalmente y sobre la img arriba -5
+        background-color: v.$blanco;
+        position:relative;
+    }
+    &__heading{
+        
+        font-family: v.$fuentePrincipal;
+        font-size: 1.6rem;
+        padding: 0.4rem 1rem;
+        text-transform: capitalize;
+        font-weight:700;
+        
+    }
+
+    &__enlace{
+        @include m.boton(v.$verde, v.$blanco);
+        padding:12px;
+        display: block;
+    }
+    &__texto{
+        
+        text-align:center;
+        max-width: 120rem;
+        margin: 2rem auto 0 auto; //centrar
+       
+        font-weight: 600;
+            
+    }
+
+}
