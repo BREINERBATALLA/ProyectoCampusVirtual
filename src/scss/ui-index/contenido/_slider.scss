@@ -5,7 +5,7 @@
     overflow:hidden ;//ocultar todo lo de afuera
 
     &__slide{
-
+        cursor:pointer;
         height: 100%;
         flex-shrink: 0;
         width: 100px;
