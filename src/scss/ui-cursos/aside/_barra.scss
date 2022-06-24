@@ -23,13 +23,13 @@ body{
         align-items: center;
         gap:1.4rem;
         &__logo{
-            width:30px;  //los tres corresponde, a un circulo, donde ira la imagen
+            width:30px;  //circulo donde va la imagen dele estudiante.
             height:30px;
             border-radius: 50%;
-           //pita el circulo azul, background:blue;
+           //pinta el circulo azul, background:blue;
            background:url(../img/Student.jpg);
             background-size: cover; //imagen ocupe todo el background
-            background-position:center; //centrada
+            background-position:center; 
         }
         
 
